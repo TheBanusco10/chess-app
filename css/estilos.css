@@ -1,0 +1,58 @@
+.text-center {
+    text-align: center;
+}
+
+#topGlobal {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+}
+
+.card {
+
+    width: 20%;
+
+    border-radius: 5px;
+
+    border: 1px solid gray;
+    box-shadow: 3px 3px #80808086;
+
+    margin: 10px;
+
+}
+
+.card img {
+
+    width: 100%;
+
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+}
+
+.rank, .name, .score {
+
+    width: 100%;
+
+    text-align: center;
+
+    font-weight: bold;
+
+}
+
+#imagenCargar {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+}
+
+#imagenCargar img {
+    width: 60px;
+}
