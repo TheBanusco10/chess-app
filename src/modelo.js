@@ -11,15 +11,41 @@ function getTopJugadores() {
             return responses.json();
         })
         .then(data => {
-            document.getElementById('imagenCargar').style.display = '';
+            mostrarCarga();
             let jugadores = data.daily;
-
-            console.log(jugadores[0]);
-            console.log(jugadores[1]);
-            console.log(jugadores[2]);
 
             tablonGlobalControlador(jugadores, 3);
 
+            ocultarCarga();
+
         });
+
+}
+
+function buscarJugador() {
+
+    let jugador = document.getElementById('buscarJugadorInput').value;
+
+    fetch(`https://api.chess.com/pub/player/${jugador} `)
+        .then (response => {
+            return response.json();
+        })
+        .then (data => {
+            console.log(data);
+            perfilJugadorControlador();
+        });
+
+}
+
+function mostrarCarga() {
+
+    document.getElementById('imagenCargar').style.display = '';
+
+
+}
+
+function ocultarCarga() {
+
+    document.getElementById('imagenCargar').style.display = 'none';
 
 }

@@ -1,14 +1,22 @@
 window.onload = () => {
 
-    // TODO Imagen de carga
-    document.getElementById('imagenCargar').style.display = '';
     getTopJugadores();
+
+    document.getElementById('buscarPerfilJugador').addEventListener('click', () => {
+        buscarJugador();
+    });
 
 }
 
 function tablonGlobalControlador(jugadores, max) {
 
-    getApp().innerHTML = tablonGlobalVista(jugadores, max);
+    tablonGlobalVista(jugadores, max);
+
+}
+
+function perfilJugadorControlador() {
+
+    document.getElementById('resultadoPerfilJugador').innerHTML = perfilJugadorVista();
 
 }
 

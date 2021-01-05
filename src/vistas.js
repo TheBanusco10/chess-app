@@ -1,41 +1,52 @@
 function tablonGlobalVista(jugadores, max) {
 
-    let contenido  = `
-
-        <div class="container">
-        <div class="row">
-            <h1 class="text-center">Tablón global de estadísticas</h1>
-            <div id="imagenCargar">
-                <img src="images/loading.gif" alt="loading">        
-            </div>
-            <section id="topGlobal">
-                
-    
-    `;
+    let top = document.getElementById('topGlobal');
+    let cards = [];
 
     for (let index = 0; index < max; index++) {
         const element = jugadores[index];
 
-        contenido += `
+        let card = document.createElement('card');
+        card.setAttribute('class', 'card');
 
-            <div class="card">
-                <img src="${element.avatar}" alt="${element.title}">
-                <p class="rank">${element.rank}</p>
-                <p class="name"><a href="${element.url}" target="_blank">${element.name}</a></p>
-                <p class="score">${element.score} puntos</p>
-            </div>
-        
-        `;
+        let img = document.createElement('img');
+        img.setAttribute('src', element.avatar);
+
+        let rank = document.createElement('p');
+        rank.setAttribute('class', 'rank');
+        let textRank = document.createTextNode(element.rank);
+        rank.appendChild(textRank);
+
+        let name = document.createElement('p');
+        name.setAttribute('class', 'name');
+        let a = document.createElement('a');
+        a.setAttribute('href', element.url);
+        a.setAttribute('target', '_blank');
+        let textA = document.createTextNode(element.name);
+        a.appendChild(textA);
+        name.appendChild(a);
+
+        let score = document.createElement('p');
+        score.setAttribute('class', 'score');
+        let textScore = document.createTextNode(element.score);
+        score.appendChild(textScore);
+
+        let tags = [img, rank, name, score];
+
+        card.append(...tags);
+
+        cards.push(card);
         
     }
 
-    contenido += `
-                </section>
-            </div>
-        </div>    
-    
-    `;
+    top.append(...cards);
 
-    return contenido;
+}
+
+
+// TODO Completar vista perfil jugador
+function perfilJugadorVista() {
+
+    return 'Prueba de perfil';
 
 }
