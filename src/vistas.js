@@ -44,9 +44,21 @@ function tablonGlobalVista(jugadores, max) {
 }
 
 
-// TODO Completar vista perfil jugador
-function perfilJugadorVista() {
+function perfilJugadorVista(jugador) {
 
-    return 'Prueba de perfil';
+    let avatar = jugador.avatar ? jugador.avatar : 'images/no-avatar.png'
+    
+    return `
+    
+    <div class="card">
+        <img src="${avatar}" alt="${jugador.username}">
+        <p class="name"><a href="${jugador.url}" target="_blank">${jugador.username}</a></p>
+        <p class="rank">${jugador.status}</p>
+    </div>
+
+    
+    `;
+
+
 
 }

@@ -14,9 +14,9 @@ function tablonGlobalControlador(jugadores, max) {
 
 }
 
-function perfilJugadorControlador() {
+function perfilJugadorControlador(jugador) {
 
-    document.getElementById('resultadoPerfilJugador').innerHTML = perfilJugadorVista();
+    document.getElementById('resultadoPerfilJugador').innerHTML = perfilJugadorVista(jugador);
 
 }
 

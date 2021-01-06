@@ -31,8 +31,7 @@ function buscarJugador() {
             return response.json();
         })
         .then (data => {
-            console.log(data);
-            perfilJugadorControlador();
+            perfilJugadorControlador(data);
         });
 
 }
